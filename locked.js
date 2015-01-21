@@ -57,13 +57,13 @@ exports.refresh = function(groupID, adminIDs) {
 
       var cidsDeleted = 0;
       cidsToDelete.forEach(function(cid) {
-        // FB.api(cid, 'delete', function(res) {
+        FB.api(cid, 'delete', function(res) {
           cidsDeleted++;
 
           if (cidsDeleted === cidsToDelete.length) {
             resolve(cidsToDelete);
           }
-        // });
+        });
       });
 
     });
