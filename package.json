@@ -10,6 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "es6-promise": "^2.0.1",
+    "express": "^4.11.1",
     "fb": "^0.7.0"
   },
   "repository": {
