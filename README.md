@@ -4,13 +4,9 @@ A customizable Facebook Group embetterment robot.
 
 ## Usage
 
-You'll need to set a few configuration options before using the hackbot:
-
-    $ cp config.json.example config.json
-
-Add your Facebook Group ID, the IDs of the group's administrators, and your
-long-lived Facebook access token to the configuration file. Currently, there is
-no way to update the access token without restarting the hackbot.
+You'll need to set a few configuration options before using the hackbot in
+`config.json`. Add your Facebook Group ID, the refresh rate in milliseconds,
+and the IDs of the group's administrators to the configuration file.
 
 To generate an access token, open up the [Facebook Graph API
 Explorer](https://developers.facebook.com/tools/explorer/) and make sure you're
@@ -29,7 +25,10 @@ Replace `APP_ID`, `APP_SECRET`, and `SHORT_LIVED_ACCESS_TOKEN` with the proper
 values. Take the long-lived (60 day) access token and place it in
 `config.json`. Then you should be good to go!
 
-    $ npm start
+    $ env ACCESS_TOKEN=[LONG_LIVED_ACCESS_TOKEN] npm start
+
+Currently, there is no way to update the access token without restarting the
+hackbot.
 
 Keep in mind that Facebook's user IDs are unique to each application, so you'll
 have to find some way of finding out admin IDs using the Graph API.

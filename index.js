@@ -1,7 +1,7 @@
 var config = require('./config.json');
 
 var FB = require('fb');
-FB.setAccessToken(config.accessToken);
+FB.setAccessToken(process.env.ACCESS_TOKEN);
 
 var refreshLocked = require('./locked').refresh;
 
