@@ -4,11 +4,12 @@
   "description": "A customizable Facebook Group embetterment robot.",
   "main": "index.js",
   "scripts": {
-      "start": "node index.js"
+    "start": "node index.js"
   },
   "contributors": "Alex Kern <alex@kern.io>",
   "license": "MIT",
   "dependencies": {
+    "es6-promise": "^2.0.1",
     "fb": "^0.7.0"
   },
   "repository": {
