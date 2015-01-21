@@ -1,0 +1,6 @@
+{
+    "accessToken": "[ADMIN'S FB ACCESS TOKEN]",
+    "groupID": "759985267390294",
+    "refreshRate": 5000,
+    "adminsIDs": [ "0987654321", "0123456789" ]
+}
