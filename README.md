@@ -6,7 +6,7 @@ A customizable Facebook Group embetterment robot.
 
 You'll need to set a few configuration options before using the hackbot in
 `config.json`. Add your Facebook Group ID, the refresh rate in milliseconds,
-and the IDs of the group's administrators to the configuration file.
+and the IDs of the group's moderators to the configuration file.
 
 To generate an access token, open up the [Facebook Graph API
 Explorer](https://developers.facebook.com/tools/explorer/) and make sure you're
@@ -31,7 +31,7 @@ Currently, there is no way to update the access token without restarting the
 hackbot.
 
 Keep in mind that Facebook's user IDs are unique to each application, so you'll
-have to find some way of finding out admin IDs using the Graph API.
+have to find some way of finding out moderator IDs using the Graph API.
 
 ## Adding Filters
 
@@ -57,7 +57,6 @@ file](https://github.com/kern/hackbot/blob/master/lib/index.js).
 * Remove the dependency on the `fb` package.
 * Create a simple administrative interface.
 * Implement a logging infrastructure for filters.
-* Automatically retrieve administrator IDs.
 * Allow for refreshing multiple groups.
 
 ## Contributors
