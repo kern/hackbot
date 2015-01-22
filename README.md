@@ -2,7 +2,7 @@
 
 A customizable Facebook Group embetterment robot.
 
-## Usage
+## Installation/Usage
 
 You'll need to set a few configuration options before using the hackbot in
 `config.json`. Add your Facebook Group ID, the refresh rate in milliseconds,
@@ -32,6 +32,30 @@ hackbot.
 
 Keep in mind that Facebook's user IDs are unique to each application, so you'll
 have to find some way of finding out admin IDs using the Graph API.
+
+## Adding Filters
+
+You can add feed filters under the `lib/filters` directory. An [example closed
+thread
+filter](https://github.com/kern/hackbot/blob/master/lib/filters/closed.js) is
+provided.
+
+Filters are functions that receive an array of arrays of posts. Each item in
+the outer array represents a post and comment thread on Facebook, with the
+first item being the original post. Items of the inner array are [Post
+objects](https://github.com/kern/hackbot/blob/master/lib/Post.js).
+
+If you add a filter, make sure to add the exported function to the
+`startRefreshing()` call in the [index
+file](https://github.com/kern/hackbot/blob/master/lib/index.js);
+
+## TODOs
+
+* Add more fun and useful filters.
+* Automatically update the access token through OAuth.
+* Remove the dependency on the `fb` package.
+* Create a simple administrative interface.
+* Implement a logging infrastructure for filters.
 
 ## Contributors
 
