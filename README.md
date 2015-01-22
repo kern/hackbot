@@ -56,6 +56,8 @@ file](https://github.com/kern/hackbot/blob/master/lib/index.js);
 * Remove the dependency on the `fb` package.
 * Create a simple administrative interface.
 * Implement a logging infrastructure for filters.
+* Automatically retrieve administrator IDs.
+* Allow for refreshing multiple groups.
 
 ## Contributors
 
