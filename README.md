@@ -41,13 +41,14 @@ filter](https://github.com/kern/hackbot/blob/master/lib/filters/closed.js) is
 provided.
 
 Filters are functions that receive an array of arrays of posts. Each item in
-the outer array represents a post and comment thread on Facebook, with the
-first item being the original post. Items of the inner array are [Post
-objects](https://github.com/kern/hackbot/blob/master/lib/Post.js).
+the outer array represents a post/comment thread on the Facebook Group. Items
+of the inner arrays are [Post
+objects](https://github.com/kern/hackbot/blob/master/lib/Post.js), with their
+first items being the original post.
 
-If you add a filter, make sure to add the exported function to the
+If you add a filter, make sure to add its exported function to the
 `startRefreshing()` call in the [index
-file](https://github.com/kern/hackbot/blob/master/lib/index.js);
+file](https://github.com/kern/hackbot/blob/master/lib/index.js).
 
 ## TODOs
 
