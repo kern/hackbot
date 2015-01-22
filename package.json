@@ -6,7 +6,10 @@
   "scripts": {
     "start": "env DEBUG=hackbot:* node lib/index.js"
   },
-  "contributors": "Alex Kern <alex@kern.io>",
+  "contributors": [
+    "Alex Kern <alex@kern.io>",
+    "Eva Zheng <champ.eva@gmail.com>"
+  ],
   "license": "MIT",
   "dependencies": {
     "debug": "^2.1.1",
