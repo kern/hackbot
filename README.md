@@ -22,8 +22,8 @@ your browser to the following URL:
         fb_exchange_token=SHORT_LIVED_ACCESS_TOKEN
 
 Replace `APP_ID`, `APP_SECRET`, and `SHORT_LIVED_ACCESS_TOKEN` with the proper
-values. Take the long-lived (60 day) access token and place it in
-`config.json`. Then you should be good to go!
+values. Take the long-lived (60 day) access token and pass it as an environment
+variable. Then you should be good to go!
 
     $ env ACCESS_TOKEN=[LONG_LIVED_ACCESS_TOKEN] npm start
 
