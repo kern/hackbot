@@ -2,13 +2,14 @@
   "name": "hackbot",
   "version": "0.0.0",
   "description": "A customizable Facebook Group embetterment robot.",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "env DEBUG=hackbot:* node lib/index.js"
   },
   "contributors": "Alex Kern <alex@kern.io>",
   "license": "MIT",
   "dependencies": {
+    "debug": "^2.1.1",
     "es6-promise": "^2.0.1",
     "express": "^4.11.1",
     "fb": "^0.7.0"
