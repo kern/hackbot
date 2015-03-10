@@ -4,7 +4,8 @@
   "description": "A customizable Facebook Group embetterment robot.",
   "main": "lib/index.js",
   "scripts": {
-    "start": "env DEBUG=hackbot:* node lib/index.js"
+    "start": "env DEBUG=hackbot,hackbot:* node lib/index.js",
+    "doc": "./node_modules/.bin/jsdoc -c doc/conf.json"
   },
   "contributors": [
     "Alex Kern <alex@kern.io>",
@@ -15,7 +16,10 @@
     "debug": "^2.1.1",
     "es6-promise": "^2.0.1",
     "express": "^4.11.1",
-    "fb": "^0.7.0"
+    "jsdoc": "^3.3.0-beta2",
+    "qs": "^2.3.3",
+    "request": "^2.53.0",
+    "underscore": "^1.8.2"
   },
   "repository": {
     "type": "git",

@@ -1,0 +1,10 @@
+{
+    "source": {
+        "include": [ "README.md", "lib" ]
+    },
+    "opts": {
+        "recurse": true,
+        "destination": "./doc"
+    },
+    "plugins": [ "plugins/markdown" ]
+}
