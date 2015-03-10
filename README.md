@@ -35,28 +35,25 @@ have to find some way of finding out moderator IDs using the Graph API.
 
 ## Adding Filters
 
-You can add feed filters under the `lib/filters` directory. An [example closed
-thread
+You can add thread filters under the `lib/filters` directory. An [example
+closed thread
 filter](https://github.com/kern/hackbot/blob/master/lib/filters/closed.js) is
 provided.
 
-Filters are functions that receive an array of arrays of posts. Each item in
-the outer array represents a post/comment thread on the Facebook Group. Items
-of the inner arrays are [Post
-objects](https://github.com/kern/hackbot/blob/master/lib/Post.js), with their
-first items being the original post.
+Filters are functions that receive an array of posts, representing a
+post/comment thread on the Facebook Group. Items of the array are [Post
+objects](https://github.com/kern/hackbot/blob/master/lib/Post.js) where the
+first item is the original post.
 
-If you add a filter, make sure to add its exported function to the
-`startRefreshing()` call in the [index
+If you add a filter, make sure to add its exported function to the `filters`
+array in the [index
 file](https://github.com/kern/hackbot/blob/master/lib/index.js).
 
 ## TODOs
 
 * Add more fun and useful filters.
 * Automatically update the access token through OAuth.
-* Remove the dependency on the `fb` package.
 * Create a simple administrative interface.
-* Implement a logging infrastructure for filters.
 * Allow for refreshing multiple groups.
 
 ## Contributors
