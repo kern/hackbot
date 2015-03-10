@@ -2,9 +2,9 @@
 
 A customizable Facebook Group embetterment robot.
 
-Hackbot uses the Facebook Graph API to implement extra moderative features that are not currently available. Currently, it only supports the closing of comment threads, but it's designed to be highly extensible.
+Hackbot uses the Facebook Graph API to implement extra moderative features that are not currently available to group administrators. At the moment, it only supports the closing of comment threads, but it's designed to be highly extensible.
 
-An instance of hackbot is currently running on [Hackathon Hackers][hh].
+An instance of hackbot is running on [Hackathon Hackers][hh].
 
 [hh]: http://hh.gd
 
