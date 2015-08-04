@@ -19,9 +19,11 @@
     "express": "^4.11.1",
     "firebase": "^2.2.3",
     "jsdoc": "^3.3.0-beta2",
+    "lodash": "^3.10.1",
     "qs": "^2.3.3",
     "request": "^2.53.0",
     "sentiment": "^1.0.2",
+    "twit": "^2.1.0",
     "underscore": "^1.8.2"
   },
   "repository": {
