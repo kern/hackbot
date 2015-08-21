@@ -63,7 +63,7 @@ Logs are stored in `log/` and are rotated daily. To view the logs:
 Filters are the fundamental units of extension for hackbot.
 
 You can add thread filters under the `lib/filters` directory. An [example
-closed thread filter][closed-file] is provided.
+closed thread filter][close-file] is provided.
 
 Filters are functions that receive an array of posts, representing a
 post/comment thread on the Facebook Group. Items of the array are [Post
@@ -72,7 +72,7 @@ objects][post-file] where the first item is the original post.
 If you add a filter, make sure to add its exported function to the `filters`
 array in the [index file][index-file].
 
-[closed-file]: https://github.com/kern/hackbot/blob/master/lib/filters/closed.js
+[close-file]: https://github.com/kern/hackbot/blob/master/lib/filters/close.js
 [post-file]: https://github.com/kern/hackbot/blob/master/lib/Post.js
 [index-file]: https://github.com/kern/hackbot/blob/master/lib/index.js
 
