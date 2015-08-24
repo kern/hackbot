@@ -10,6 +10,8 @@ An instance of hackbot is running on [Hackathon Hackers][hh].
 
 ## Installation
 
+### Getting a Facebook Access Token
+
 You'll need to set a few configuration options before using the hackbot in
 `config.json`. Add your Facebook Group ID, the refresh rate in milliseconds,
 and the IDs of the group's moderators to the configuration file.
@@ -40,6 +42,37 @@ web-based flow][oauth-issue].
 
 [explorer]: https://developers.facebook.com/tools/explorer/
 [oauth-issue]: https://github.com/kern/hackbot/issues/6
+
+### Installing the dependencies
+To install the npm dependencies
+```
+npm install .
+```
+
+### Setting up Firebase
+Persistency is currently done via [Firebase](www.firebase.com).
+
+Set up a Firebase data store then store the secret and url as environment variablse:
+```
+export FIREBASE_SECRET='<yo-secret->'
+export FIREBASE_URL='<firebase-url>
+```
+
+In your Firebase you need to add
+```
+accessToken: <your-fb-access-token>,
+id: <your-fb-group-id>,
+mods: <array-of-mod-ids>,
+watcher: <boolean of whether u will scan group>
+```
+
+### Setting up hackbot basic
+Since its inception, hackbot now has twitter and metamind integrations. If you
+just want to run Facebook integrations you can set the following environment
+variable:
+```
+export BASIC=1
+```
 
 ## Usage
 

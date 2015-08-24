@@ -10,7 +10,8 @@
   },
   "contributors": [
     "Alex Kern <alex@kern.io>",
-    "Eva Zheng <champ.eva@gmail.com>"
+    "Eva Zheng <champ.eva@gmail.com>",
+    "JB Rubinovitz <j@rubinovitz.com>"
   ],
   "license": "MIT",
   "dependencies": {
