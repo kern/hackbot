@@ -21,8 +21,8 @@ Explorer][explorer] and make sure you're using a custom application. Click "Get
 Access Token" and make sure the `user_managed_groups` and `publish_actions` permissions
 are ticked.
 
-![user_managed_groups permission][https://raw.githubusercontent.com/kern/hackbot/master/doc/screenshots/user_managed_groups.png]
-![publish_actions permission][https://raw.githubusercontent.com/kern/hackbot/master/doc/screenshots/publish_actions.png]
+![user_managed_groups permission](https://raw.githubusercontent.com/kern/hackbot/master/doc/screenshots/user_managed_groups.png)
+![publish_actions permission](https://raw.githubusercontent.com/kern/hackbot/master/doc/screenshots/publish_actions.png)
 
 Click the blue "Get Access Token" in the modal. Copy the
 short-lived access token and navigate in your browser to the following URL:
