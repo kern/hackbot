@@ -125,6 +125,6 @@ Zheng][eva-twitter].
 
 ## License
 
-[MIT][license]. Contributions welcome!
+[BSD][license]. Contributions welcome!
 
 [license]: https://github.com/kern/hackbot/blob/master/LICENSE
