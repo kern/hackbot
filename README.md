@@ -69,7 +69,7 @@ In your Firebase you need to add the following keys:
 }
 ```
 
-### 4. Setting up Hackbot basic
+### 4. Set up Hackbot basic
 
 Hackbot has optional but on-by-default Twitter and MetaMind integrations. If
 you only wish to run the Facebook integrations you can set the following
