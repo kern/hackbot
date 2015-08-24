@@ -16,8 +16,10 @@ and the IDs of the group's moderators to the configuration file.
 
 To generate an access token, open up the [Facebook Graph API
 Explorer][explorer] and make sure you're using a custom application. Click "Get
-Access Token" and make sure the `user_groups` and `publish_actions` permissions
-are ticked. Click the blue "Get Access Token" in the modal. Copy the
+Access Token" and make sure the `user_managed_groups` and `publish_actions` permissions
+are ticked.
+
+Click the blue "Get Access Token" in the modal. Copy the
 short-lived access token and navigate in your browser to the following URL:
 
     https://graph.facebook.com/oauth/access_token?
