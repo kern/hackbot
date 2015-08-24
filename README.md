@@ -114,17 +114,12 @@ array in the [index file][index-file].
 [post-file]: https://github.com/kern/hackbot/blob/master/lib/Post.js
 [index-file]: https://github.com/kern/hackbot/blob/master/lib/index.js
 
-## Contributors
+## License & Acknowledgements
 
-Made with caffeine at [MHacks V][mhacks] by [Alex Kern][kern-twitter] and [Eva
-Zheng][eva-twitter].
+Hackbot is released under the [BSD 3-Clause][license] license. The initial
+prototype was made with caffeine at [MHacks V][mhacks] by [Alex
+Kern][kern-twitter] and [Eva Zheng][eva-twitter].
 
 [mhacks]: http://mhacks.org
 [kern-twitter]: https://twitter.com/KernCanCode
 [eva-twitter]: https://twitter.com/evadoraz
-
-## License
-
-[BSD][license]. Contributions welcome!
-
-[license]: https://github.com/kern/hackbot/blob/master/LICENSE
