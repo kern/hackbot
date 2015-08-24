@@ -10,7 +10,7 @@ An instance of hackbot is running on [Hackathon Hackers][hh].
 
 ## Installation
 
-### Getting a Facebook Access Token
+### 1. Get a Facebook access token
 
 You'll need to set a few configuration options before using the hackbot in
 `config.json`. Add your Facebook Group ID, the refresh rate in milliseconds,
@@ -20,6 +20,9 @@ To generate an access token, open up the [Facebook Graph API
 Explorer][explorer] and make sure you're using a custom application. Click "Get
 Access Token" and make sure the `user_managed_groups` and `publish_actions` permissions
 are ticked.
+
+![user_managed_groups permission][https://raw.githubusercontent.com/kern/hackbot/master/doc/screenshots/user_managed_groups.png]
+![publish_actions permission][https://raw.githubusercontent.com/kern/hackbot/master/doc/screenshots/publish_actions.png]
 
 Click the blue "Get Access Token" in the modal. Copy the
 short-lived access token and navigate in your browser to the following URL:
@@ -43,36 +46,36 @@ web-based flow][oauth-issue].
 [explorer]: https://developers.facebook.com/tools/explorer/
 [oauth-issue]: https://github.com/kern/hackbot/issues/6
 
-### Installing the dependencies
-To install the npm dependencies
-```
-npm install .
+### 2. Install dependencies
+
+    $ npm install
+
+### 3. Set up Firebase
+
+Persistence is currently done via [Firebase](www.firebase.com).
+
+Set up a Firebase datastore and export the URL and secret as environment variables:
+
+    $ export FIREBASE_SECRET='<yo-secret>'
+    $ export FIREBASE_URL='<firebase-url>
+
+In your Firebase you need to add the following keys:
+
+```json
+{
+    "accessToken": "<your-fb-access-token>",
+    "id": "<your-fb-group-id>",
+    "mods": ["<mod-id-1>", "<mod-id-2>"]
+}
 ```
 
-### Setting up Firebase
-Persistency is currently done via [Firebase](www.firebase.com).
+### 4. Setting up Hackbot basic
 
-Set up a Firebase data store then store the secret and url as environment variablse:
-```
-export FIREBASE_SECRET='<yo-secret->'
-export FIREBASE_URL='<firebase-url>
-```
+Hackbot has optional but on-by-default Twitter and MetaMind integrations. If
+you only wish to run the Facebook integrations you can set the following
+environment variable:
 
-In your Firebase you need to add
-```
-accessToken: <your-fb-access-token>,
-id: <your-fb-group-id>,
-mods: <array-of-mod-ids>,
-watcher: <boolean of whether u will scan group>
-```
-
-### Setting up hackbot basic
-Since its inception, hackbot now has twitter and metamind integrations. If you
-just want to run Facebook integrations you can set the following environment
-variable:
-```
-export BASIC=1
-```
+    $ export BASIC=1
 
 ## Usage
 

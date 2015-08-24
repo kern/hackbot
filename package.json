@@ -11,7 +11,8 @@
   "contributors": [
     "Alex Kern <alex@kern.io>",
     "Eva Zheng <champ.eva@gmail.com>",
-    "JB Rubinovitz <j@rubinovitz.com>"
+    "JB Rubinovitz <j@rubinovitz.com>",
+    "Rodney Folz <folz@rodneyfolz.com>"
   ],
   "license": "MIT",
   "dependencies": {

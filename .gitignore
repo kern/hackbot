@@ -29,4 +29,5 @@ node_modules
 .lock-wscript
 
 # Docs
+!doc/screenshots/*
 doc
