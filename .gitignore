@@ -31,3 +31,6 @@ node_modules
 # Docs
 !doc/screenshots/*
 doc
+
+# Hackbot
+hackbot.db
