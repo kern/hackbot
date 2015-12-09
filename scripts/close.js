@@ -18,15 +18,13 @@ export default function (emitter, log) {
     if (!post.isMod) {
       state.get().then(s => {
         if (s.closed) {
-
           emitter.client.del(post.id).then(() => {
             log.info('deleted post in closed thread', post)
           })
-
         }
       })
     } else if (isClosePost(post)) {
-      log.info('closed thread', post)
+      log.info(`${post.fromName} (${post.from}) closed thread`, post)
       state.update({ closed: true })
     }
 
