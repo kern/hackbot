@@ -9,7 +9,7 @@ process.on('uncaughtException', ex => {
 
 process.on('unhandledRejection', (reason, p) => {
   p.catch(err => {
-    console.error(err)
+    console.error(err.stack)
     console.log('Exiting due to unhandled rejection...')
     process.exit(1)
   })
