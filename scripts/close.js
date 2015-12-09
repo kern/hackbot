@@ -11,7 +11,7 @@ function isClosePost (post) {
  * moderator to issue the "/thread" command, and automatically deletes all
  * non-moderator posts after it.
  */
-export default function (emitter, log) {
+export default function (emitter, record) {
 
   emitter.on('new', (post, state) => {
 
@@ -19,12 +19,12 @@ export default function (emitter, log) {
       state.get().then(s => {
         if (s.closed) {
           emitter.client.del(post.id).then(() => {
-            log.info('deleted post in closed thread', post)
+            record('close-delete', { post })
           })
         }
       })
     } else if (isClosePost(post)) {
-      log.info(`${post.fromName} (${post.from}) closed thread`, post)
+      record('close', { post })
       state.update({ closed: true })
     }
 

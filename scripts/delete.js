@@ -11,13 +11,13 @@ function isDeletePost (post) {
  * moderator to issue the "/delete" command, and automatically deletes all
  * non-moderator posts after it.
  */
-export default function (emitter, log) {
+export default function (emitter, record) {
 
   emitter.on('new', (post, state) => {
     if (post.isMod && isDeletePost(post) && post.level > 0) {
       const parent = post.parent
       emitter.client.del(parent.id).then(() => {
-        log.info(`${post.fromName} (${post.from}) deleted post`, parent)
+        record('delete', { post: parent })
       })
     }
   })

@@ -1,6 +1,20 @@
 #! /usr/bin/env node
 import CLI from './lib/CLI'
 
+process.on('uncaughtException', ex => {
+  console.error(ex)
+  console.log('Exiting due to uncaught exception...')
+  process.exit(1)
+})
+
+process.on('unhandledRejection', (reason, p) => {
+  p.catch(err => {
+    console.error(err)
+    console.log('Exiting due to unhandled rejection...')
+    process.exit(1)
+  })
+})
+
 process.on('SIGINT', () => {
   console.log('Exiting...')
   process.exit(0)
