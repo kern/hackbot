@@ -62,10 +62,10 @@ module.exports = function (recordDir) {
     log(`recording '${type}' action to ${fullPath}`)
 
     return mkdirP(recordDir).then(() => {
-      return echo(fullPath, JSON.stringify(data, (k, v) => {
+      return echo(fullPath, JSON.stringify(data, function (k, v) {
         if (k === 'parent' || k === 'group') {
           return v.id
-        } else if (k === 'fromName' && !data.isMod) {
+        } else if (k === 'fromName' && typeof this === 'object' && !this.isMod) {
           return 'Anonymous'
         } else {
           return v
