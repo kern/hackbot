@@ -7,4 +7,4 @@ if node -e "process.exit(($npm_config_argv).original[0].indexOf('pu') === 0)"; t
   exit 0;
 fi
 
-./node_modules/.bin/babel lib --ignore __tests__ --out-dir dist;
+./node_modules/.bin/babel src --ignore __tests__ --out-dir dist;
