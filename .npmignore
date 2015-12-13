@@ -43,8 +43,10 @@ Icon
 # Java
 *.class
 
-# Sources
+# Hackbot
 src
 old
 resources
+record
+hackbot.db
 !reosurces/prepublish.sh
