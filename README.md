@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/kern/hackbot/master/resources/logo.png" alt="hackbot" width="180" />
+<img src="https://raw.githubusercontent.com/kern/hackbot/master/resources/logo.png" alt="hackbot" width="360" />
 
 Hackbot adds features to Facebook Groups through automation.
 
