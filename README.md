@@ -1,5 +1,7 @@
 <img src="https://raw.githubusercontent.com/kern/hackbot/master/resources/logo.png" alt="hackbot" width="354" />
 
+[![npm shield](https://img.shields.io/npm/v/hackbot.svg)](https://www.npmjs.com/package/hackbot) [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](http://standardjs.com/)
+
 *Hackbot adds features to Facebook Groups through automation.*
 
 An instance of Hackbot is running on [Hackathon Hackers](https://facebook.com/groups/hackathonhackers).
