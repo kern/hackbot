@@ -64,7 +64,7 @@ There will be *much* better usage documentation coming soon, but here's how it w
 
 Hackbot uses [JavaScript Standard Style](https://github.com/feross/standard) and [Babel](https://babeljs.io/) for ES6+ support.
 
-    $ git clone git@github.com:pavlovml/gallup.git
+    $ git clone git@github.com:kern/hackbot.git
     $ npm install
     $ npm run dev -- [see usage above]
 
