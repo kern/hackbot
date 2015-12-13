@@ -17,8 +17,8 @@ Explorer][explorer] and make sure you're using a custom application. Click "Get
 Access Token" and make sure the `user_managed_groups` and `publish_actions` permissions
 are ticked.
 
-![user_managed_groups permission](https://raw.githubusercontent.com/kern/hackbot/master/doc/screenshots/user_managed_groups.png)
-![publish_actions permission](https://raw.githubusercontent.com/kern/hackbot/master/doc/screenshots/publish_actions.png)
+![user_managed_groups permission](https://raw.githubusercontent.com/kern/hackbot/master/resources/user_managed_groups.png)
+![publish_actions permission](https://raw.githubusercontent.com/kern/hackbot/master/resources/publish_actions.png)
 
 Click the blue "Get Access Token" in the modal. Copy the
 short-lived access token and navigate in your browser to the following URL:
@@ -55,7 +55,7 @@ IDs of your group's moderators.
 
 ## Usage
 
-There will be much better usage docs coming soon, but here's how it works:
+There will be *much* better usage documentation coming soon, but here's how it works:
 
     $ hackbot GROUP_ID ACCESS_TOKEN -m MOD_ID1,MOD_ID2,MOD_ID3 -s close,delete --interval 5
 
