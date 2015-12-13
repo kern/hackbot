@@ -16,21 +16,15 @@ An instance of Hackbot is running on [Hackathon Hackers](https://facebook.com/gr
 
 *Note:* This process is annoying. Please consider [implementing this through a web-based OAuth flow][oauth-issue].
 
-You'll need to set a few configuration options before using the hackbot in
-`config.json`. Add your Facebook Group ID, the refresh rate in milliseconds,
-and the IDs of the group's moderators to the configuration file.
+You'll need to set a few configuration options before using Hackbot: your Facebook Group ID, the refresh rate in milliseconds (5s is a good number), and the IDs of the group's moderators to the configuration file.
 
-To generate an access token, open up the [Facebook Graph API
-Explorer][explorer] and make sure you're using a custom application. Click "Get
-Access Token" and make sure the `user_managed_groups` and `publish_actions`
-permissions are ticked.
+To generate an access token, open up the [Facebook Graph API Explorer][explorer] and make sure you're using a custom application. Click "Get Access Token" and make sure the `user_managed_groups` and `publish_actions` permissions are ticked.
 
 <img src="https://raw.githubusercontent.com/kern/hackbot/master/resources/user_managed_groups.png" alt="user_managed_groups permission" width="555" />
 
 <img src="https://raw.githubusercontent.com/kern/hackbot/master/resources/publish_actions.png" alt="publish_actions permission" width="555" />
 
-Click the blue "Get Access Token" in the modal. Copy the
-short-lived access token and navigate in your browser to the following URL:
+Click the blue "Get Access Token" in the modal. Copy the short-lived access token and navigate in your browser to the following URL:
 
     https://graph.facebook.com/oauth/access_token?
         client_id=APP_ID&
@@ -38,20 +32,16 @@ short-lived access token and navigate in your browser to the following URL:
         grant_type=fb_exchange_token&
         fb_exchange_token=SHORT_LIVED_ACCESS_TOKEN
 
-Replace `APP_ID`, `APP_SECRET`, and `SHORT_LIVED_ACCESS_TOKEN` with the proper
-values. Take the long-lived (60 day) access token in the body and save it in an
-environment variable named `ACCESS_TOKEN`. Then you should be good to go!
-
-Keep in mind that Facebook's user IDs are unique to each application, so you'll
-have to find some way of finding out moderator IDs using the Graph API.
+Replace `APP_ID`, `APP_SECRET`, and `SHORT_LIVED_ACCESS_TOKEN` with the proper values. Take the long-lived (60 day) access token in the body and save it somewhere for safe-keeping. You'll need it when you run Hackbot below.
 
 [explorer]: https://developers.facebook.com/tools/explorer/
 [oauth-issue]: https://github.com/kern/hackbot/issues/6
 
 ### 3. Collect the Graph IDs of your group's moderators
 
-You can use the [Graph API Explorer][explorer] to find the numeric Graph API
-IDs of your group's moderators.
+You can use the [Graph API Explorer][explorer] to find the numeric Graph API IDs of your group's moderators.
+
+Keep in mind that Facebook's user IDs are unique to each application, so you'll have to get creative. Try digging through your friends list at `/me/friends?limit=1000`.
 
 [explorer]: https://developers.facebook.com/tools/explorer/
 
@@ -75,9 +65,7 @@ Lint before committing:
 
 ## License & Acknowledgements
 
-Hackbot is released under the [BSD 3-Clause][license] license. The initial
-prototype was made with caffeine at [MHacks V][mhacks] by [Alex
-Kern][kern-twitter] and [Eva Zheng][eva-twitter].
+Hackbot is released under the [BSD 3-Clause][license] license. The initial prototype was made with caffeine at [MHacks V][mhacks] by [Alex Kern][kern-twitter] and [Eva Zheng][eva-twitter].
 
 [license]: https://github.com/kern/hackbot/blob/master/LICENSE
 [mhacks]: http://mhacks.org
