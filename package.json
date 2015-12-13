@@ -1,6 +1,6 @@
 {
   "name": "hackbot",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Hackbot adds moderative features to Facebook Groups through automation.",
   "preferGlobal": true,
   "bin": "dist/cli.js",
