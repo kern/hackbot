@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/kern/hackbot/master/resources/logo.png" alt="hackbot" width="254" />
+<img src="https://raw.githubusercontent.com/kern/hackbot/master/resources/logo.png" alt="hackbot" width="180" />
 
 Hackbot adds features to Facebook Groups through automation.
 
@@ -14,11 +14,12 @@ and the IDs of the group's moderators to the configuration file.
 
 To generate an access token, open up the [Facebook Graph API
 Explorer][explorer] and make sure you're using a custom application. Click "Get
-Access Token" and make sure the `user_managed_groups` and `publish_actions` permissions
-are ticked.
+Access Token" and make sure the `user_managed_groups` and `publish_actions`
+permissions are ticked.
 
-![user_managed_groups permission](https://raw.githubusercontent.com/kern/hackbot/master/resources/user_managed_groups.png)
-![publish_actions permission](https://raw.githubusercontent.com/kern/hackbot/master/resources/publish_actions.png)
+<img src="https://raw.githubusercontent.com/kern/hackbot/master/resources/user_managed_groups.png" alt="user_managed_groups permission" width="555" />
+
+<img src="https://raw.githubusercontent.com/kern/hackbot/master/resources/publish_actions.png" alt="publish_actions permission" width="555" />
 
 Click the blue "Get Access Token" in the modal. Copy the
 short-lived access token and navigate in your browser to the following URL:
