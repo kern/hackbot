@@ -11,7 +11,7 @@ function isDeletePost (post) {
  * moderator to issue the "/delete" command, and automatically deletes all
  * non-moderator posts after it.
  */
-export default function (emitter, record) {
+export function attach (emitter, record) {
 
   emitter.on('new', (post, state) => {
     if (post.isMod && isDeletePost(post) && post.level > 0) {

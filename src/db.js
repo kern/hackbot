@@ -56,10 +56,10 @@ export default class DB {
         if (err) {
           reject(err)
         } else if (doc == null) {
-          log.debug('get thread state', thread, {})
+          log.debug('get thread state', { thread, state: {} })
           resolve({})
         } else {
-          log.debug('get thread state', thread, doc.state)
+          log.debug('get thread state', { thread, state: doc.state })
           resolve(doc.state)
         }
       })

@@ -1,7 +1,27 @@
-import * as log from './log'
+#! /usr/bin/env node
+
+import log from './log'
 import ChangeEmitter from './ChangeEmitter'
-import path from 'path'
 import record from './record'
+
+process.on('uncaughtException', ex => {
+  console.error(ex)
+  console.log('Exiting due to uncaught exception...')
+  process.exit(1)
+})
+
+process.on('unhandledRejection', (reason, p) => {
+  p.catch(err => {
+    console.error(err.stack)
+    console.log('Exiting due to unhandled rejection...')
+    process.exit(1)
+  })
+})
+
+process.on('SIGINT', () => {
+  console.log('Exiting...')
+  process.exit(0)
+})
 
 class CLIArgs {
 
@@ -75,7 +95,7 @@ export default class CLI {
     }
   }
 
-  processArgs(args) {
+  processArgs (args) {
 
     const cliArgs = new CLIArgs(args)
 
@@ -114,30 +134,34 @@ export default class CLI {
 
   }
 
-  run() {
+  run () {
     this.mode.apply(this)
   }
 
-  help() {
-    log.info([
+  help () {
+    log([
       'usage: hackbot <group> <access-token> [<args>...]'
     ].join('\n'))
   }
 
-  watch() {
+  watch () {
     const emitter = new ChangeEmitter(this.opts)
-    log.info(`started with database '${this.opts.dbFilename}'`)
+    log('started with database',
+        { filename: this.opts.dbFilename })
 
     for (let script of this.opts.scripts) {
       try {
-        log.info(`loading script '${script}'`)
-        const scriptFn = require(`../scripts/${script}`)
-        scriptFn(emitter, record(this.opts.recordDir))
+        log('loading script', { name: script })
+        const { attach } = require(`./scripts/${script}`)
+        attach(emitter, record(this.opts.recordDir))
       } catch (ex) {
-        log.error(`no such script '${script}'`)
+        log.error('no such script', { name: script })
         process.exit(1)
       }
     }
   }
 
 }
+
+const cli = new CLI(process.argv.slice(2))
+cli.run()

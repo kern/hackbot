@@ -2,8 +2,8 @@ import * as log from './log'
 import DB from './db'
 import FBClient from './FBClient'
 import _ from 'lodash'
+import crypto from 'crypto'
 import refresher from './refresher'
-import sha1 from 'sha1'
 import { EventEmitter } from 'events'
 
 /**
@@ -30,7 +30,7 @@ const REFRESH_PARAMS = {
 
 function versionHash (post) {
   var s = post.id + '|' + post.from + '|' + (post.message || '')
-  return sha1(s)
+  return crypto.createHash('sha1').update(s).digest('hex')
 }
 
 function messageCommand (message) {
@@ -105,7 +105,7 @@ function walkThread (thread, fn) {
 
 export default class ChangeEmitter extends EventEmitter {
 
-  constructor(opts) {
+  constructor (opts) {
 
     super()
 

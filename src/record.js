@@ -1,8 +1,8 @@
 import childProcess from 'child_process'
 import fs from 'fs'
+import log from './log'
 import moment from 'moment'
 import path from 'path'
-import { info } from './log'
 
 function mkdirP (path) {
   return new Promise((resolve, reject) => {
@@ -59,7 +59,7 @@ module.exports = function (recordDir) {
     const dateStr = occurred.format('YYYY-MM-DD-hh-mm-ss')
     const filename = `${dateStr}-${type}.json`
     const fullPath = path.resolve(recordDir, filename)
-    info(`recording '${type}' action to ${fullPath}`)
+    log(`recording '${type}' action to ${fullPath}`)
 
     return mkdirP(recordDir).then(() => {
       return echo(fullPath, JSON.stringify(data, (k, v) => {

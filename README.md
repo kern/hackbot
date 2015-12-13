@@ -1,12 +1,8 @@
-# hackbot
+<img src="https://raw.githubusercontent.com/kern/hackbot/master/resources/logo.png" alt="hackbot" width="254" />
 
-A customizable Facebook Group embetterment robot.
+Hackbot adds features to Facebook Groups through automation.
 
-Hackbot uses the Facebook Graph API to implement extra moderative features that are not currently available to group administrators. At the moment, it only supports the closing of comment threads, but it's designed to be highly extensible.
-
-An instance of hackbot is running on [Hackathon Hackers][hh].
-
-[hh]: http://hh.gd
+An instance of hackbot is running on [Hackathon Hackers](https://facebook.com/groups/hackathonhackers).
 
 ## Installation
 
@@ -46,73 +42,34 @@ web-based flow][oauth-issue].
 [explorer]: https://developers.facebook.com/tools/explorer/
 [oauth-issue]: https://github.com/kern/hackbot/issues/6
 
-### 2. Install dependencies
+### 2. Collect the Graph IDs of your group's moderators
 
-    $ npm install
+You can use the [Graph API Explorer][explorer] to find the numeric Graph API
+IDs of your group's moderators.
 
-### 3. Set up Firebase
+[explorer]: https://developers.facebook.com/tools/explorer/
 
-Persistence is currently done via [Firebase](www.firebase.com).
+### 3. Install Hackbot
 
-Set up a Firebase datastore and export the URL and secret as environment variables:
-
-    $ export FIREBASE_SECRET='<yo-secret>'
-    $ export FIREBASE_URL='<firebase-url>
-
-In your Firebase you need to add the following keys:
-
-```json
-{
-    "accessToken": "<your-fb-access-token>",
-    "id": "<your-fb-group-id>",
-    "mods": ["<mod-id-1>", "<mod-id-2>"]
-}
-```
-
-### 4. Set up Hackbot basic
-
-Hackbot has optional but on-by-default Twitter and MetaMind integrations. If
-you only wish to run the Facebook integrations you can set the following
-environment variable:
-
-    $ export BASIC=1
+    $ npm install -g hackbot
 
 ## Usage
 
-To start the hackbot, use your long-lived access token and run:
+There will be much better usage docs coming soon, but here's how it works:
 
-    $ env ACCESS_TOKEN=[LONG_LIVED_ACCESS_TOKEN] npm start
+    $ hackbot GROUP_ID ACCESS_TOKEN -m MOD_ID1,MOD_ID2,MOD_ID3 -s close,delete --interval 5
 
-Currently, there is no way to update the access token without restarting the
-hackbot. You can set the port for the HTTP server using the `PORT` environment
-variable.
+## Development
 
-To generate the docs:
+Hackbot uses [JavaScript Standard Style](https://github.com/feross/standard) and [Babel](https://babeljs.io/) for ES6+ support.
 
-    $ npm run doc
-    $ open doc/index.html
+    $ git clone git@github.com:pavlovml/gallup.git
+    $ npm install
+    $ npm run dev -- [see usage above]
 
-Logs are stored in `log/` and are rotated daily. To view the logs:
+Lint before committing:
 
-    $ npm run log
-
-## Adding Filters
-
-Filters are the fundamental units of extension for hackbot.
-
-You can add thread filters under the `lib/filters` directory. An [example
-closed thread filter][close-file] is provided.
-
-Filters are functions that receive an array of posts, representing a
-post/comment thread on the Facebook Group. Items of the array are [Post
-objects][post-file] where the first item is the original post.
-
-If you add a filter, make sure to add its exported function to the `filters`
-array in the [index file][index-file].
-
-[close-file]: https://github.com/kern/hackbot/blob/master/lib/filters/close.js
-[post-file]: https://github.com/kern/hackbot/blob/master/lib/Post.js
-[index-file]: https://github.com/kern/hackbot/blob/master/lib/index.js
+    $ npm run lint
 
 ## License & Acknowledgements
 

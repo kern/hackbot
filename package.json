@@ -1,13 +1,14 @@
 {
   "name": "hackbot",
-  "version": "1.0.0",
-  "description": "A customizable Facebook Group embetterment robot.",
+  "version": "0.1.0",
+  "description": "Hackbot adds moderative features to Facebook Groups through automation.",
   "preferGlobal": true,
-  "bin": "index.js",
+  "bin": "dist/cli.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "babel-node index.js",
-    "lint": "./node_modules/.bin/standard"
+    "start": "babel-node src/cli.js",
+    "dev": "nodemon --exec babel-node -- src/cli.js",
+    "lint": "./node_modules/.bin/standard",
+    "prepublish": "./resources/prepublish.sh"
   },
   "contributors": [
     "Alex Kern <alex@kern.io>",
@@ -17,28 +18,36 @@
   ],
   "license": "BSD-3-Clause",
   "dependencies": {
-    "babel": "^5.8.23",
-    "bunyan": "^1.3.4",
-    "es6-promise": "^2.0.1",
+    "debug": "^2.2.0",
     "express": "^4.11.1",
-    "firebase": "^2.2.3",
     "jsdoc": "^3.3.0-beta2",
     "lodash": "^3.10.1",
     "moment": "^2.10.6",
     "nedb": "^1.2.0",
     "qs": "^2.3.3",
     "request": "^2.53.0",
-    "sentiment": "^1.0.2",
-    "sha1": "^1.1.1",
-    "standard": "^5.1.1",
-    "twit": "^2.1.0",
-    "underscore": "^1.8.2"
+    "standard": "^5.1.1"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/kern/hackbot.git"
   },
   "engines": {
-    "node": "0.10.x"
+    "node": "5.1.x"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
+  "standard": {
+    "ignore": [
+      "dist",
+      "old"
+    ]
+  },
+  "devDependencies": {
+    "babel-cli": "^6.3.17",
+    "babel-preset-es2015": "^6.3.13"
   }
 }

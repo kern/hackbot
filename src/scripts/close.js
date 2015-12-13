@@ -11,7 +11,7 @@ function isClosePost (post) {
  * moderator to issue the "/thread" command, and automatically deletes all
  * non-moderator posts after it.
  */
-export default function (emitter, record) {
+export function attach (emitter, record) {
 
   emitter.on('new', (post, state) => {
 
