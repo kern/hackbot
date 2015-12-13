@@ -14,6 +14,8 @@ An instance of Hackbot is running on [Hackathon Hackers](https://facebook.com/gr
 
 ### 2. Get your long-lived Facebook access token
 
+*Note:* This process is annoying. Please consider [implementing this through a web-based OAuth flow][oauth-issue].
+
 You'll need to set a few configuration options before using the hackbot in
 `config.json`. Add your Facebook Group ID, the refresh rate in milliseconds,
 and the IDs of the group's moderators to the configuration file.
@@ -42,9 +44,6 @@ environment variable named `ACCESS_TOKEN`. Then you should be good to go!
 
 Keep in mind that Facebook's user IDs are unique to each application, so you'll
 have to find some way of finding out moderator IDs using the Graph API.
-
-*Note:* This process is annoying. Please consider [implementing this through a
-web-based flow][oauth-issue].
 
 [explorer]: https://developers.facebook.com/tools/explorer/
 [oauth-issue]: https://github.com/kern/hackbot/issues/6
