@@ -7,7 +7,8 @@
   "scripts": {
     "start": "babel-node src/cli.js",
     "dev": "nodemon --exec babel-node -- src/cli.js",
-    "lint": "./node_modules/.bin/standard",
+    "build": "babel src --ignore __tests__ --out-dir dist",
+    "lint": "standard",
     "prepublish": "./resources/prepublish.sh"
   },
   "contributors": [
