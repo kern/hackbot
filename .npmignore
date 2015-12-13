@@ -45,5 +45,6 @@ Icon
 
 # Sources
 src
-resources/logo.png
-resources/logo.sketch
+old
+resources
+!reosurces/prepublish.sh
