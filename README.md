@@ -1,12 +1,16 @@
 <img src="https://raw.githubusercontent.com/kern/hackbot/master/resources/logo.png" alt="hackbot" width="360" />
 
-Hackbot adds features to Facebook Groups through automation.
+*Hackbot adds features to Facebook Groups through automation.*
 
-An instance of hackbot is running on [Hackathon Hackers](https://facebook.com/groups/hackathonhackers).
+An instance of Hackbot is running on [Hackathon Hackers](https://facebook.com/groups/hackathonhackers).
 
 ## Installation
 
-### 1. Get a Facebook access token
+### 1. Install Hackbot
+
+    $ npm install -g hackbot
+
+### 2. Get your long-lived Facebook access token
 
 You'll need to set a few configuration options before using the hackbot in
 `config.json`. Add your Facebook Group ID, the refresh rate in milliseconds,
@@ -43,16 +47,12 @@ web-based flow][oauth-issue].
 [explorer]: https://developers.facebook.com/tools/explorer/
 [oauth-issue]: https://github.com/kern/hackbot/issues/6
 
-### 2. Collect the Graph IDs of your group's moderators
+### 3. Collect the Graph IDs of your group's moderators
 
 You can use the [Graph API Explorer][explorer] to find the numeric Graph API
 IDs of your group's moderators.
 
 [explorer]: https://developers.facebook.com/tools/explorer/
-
-### 3. Install Hackbot
-
-    $ npm install -g hackbot
 
 ## Usage
 
