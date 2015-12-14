@@ -66,7 +66,7 @@ function normalizeResponse (raw, group) {
         picture: raw.picture
       },
       comments: [],
-      isMod: group.mods.indexOf(raw.from.id) !== -1,
+      isMod: group.mods.indexOf(raw.from == null ? '' : raw.from.id) !== -1,
       command: messageCommand(raw.message)
     }
 
