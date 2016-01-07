@@ -130,7 +130,7 @@ export default class CLI {
     if (d !== '') { this.opts.dbFilename = d }
 
     const r = cliArgs.asString('-r', '--record')
-    if (d !== '') { this.opts.recordDir = r }
+    if (r !== '') { this.opts.recordDir = r }
 
   }
 
